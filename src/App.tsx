@@ -51,7 +51,7 @@ function NeuroTraceDashboard() {
   };
 
   return (
-    <div className="min-h-screen bg-[#0b0f19] text-slate-100 flex flex-col font-sans">
+    <div className="min-h-screen bg-white text-black flex flex-col font-sans">
       {/* Strict 3-zone Header */}
       <Header
         activeTab={activeTab}
@@ -62,34 +62,34 @@ function NeuroTraceDashboard() {
       />
 
       {/* Breadcrumb Contextual Subheader */}
-      <div className="bg-slate-950/70 border-b border-slate-800/80 px-6 py-2.5 flex flex-wrap items-center justify-between gap-3 text-xs">
+      <div className="bg-white border-b border-black/10 px-6 py-2.5 flex flex-wrap items-center justify-between gap-3 text-xs">
         <div className="flex items-center gap-2 overflow-hidden">
-          <span className="text-slate-400 font-mono">SELECTED DECISION:</span>
-          <span className="font-mono text-cyan-400 font-bold">{selectedTrace.id}</span>
-          <span className="text-slate-600">/</span>
-          <span className="text-slate-300 font-semibold truncate">{selectedTrace.decisionType}</span>
-          <span className="text-slate-600 hidden sm:inline">·</span>
-          <span className="text-slate-500 font-mono hidden sm:inline">{selectedTrace.entityId}</span>
+          <span className="text-black/60 font-mono">SELECTED DECISION:</span>
+          <span className="font-mono text-black font-bold">{selectedTrace.id}</span>
+          <span className="text-black/40">/</span>
+          <span className="text-black font-semibold truncate">{selectedTrace.decisionType}</span>
+          <span className="text-black/40 hidden sm:inline">·</span>
+          <span className="text-black/70 font-mono hidden sm:inline">{selectedTrace.entityId}</span>
         </div>
 
         <div className="flex items-center gap-3">
           <div className="flex items-center gap-1.5 font-mono text-[11px]">
-            <span className="text-slate-500">OUTCOME:</span>
+            <span className="text-black/70">OUTCOME:</span>
             <span className={`font-bold px-2 py-0.5 rounded text-[11px] ${
-              selectedTrace.finalOutcome === 'APPROVED' ? 'bg-emerald-950/80 text-emerald-400 border border-emerald-800' :
-              selectedTrace.finalOutcome === 'ESCALATED' ? 'bg-amber-950/80 text-amber-400 border border-amber-800' :
-              'bg-red-950/80 text-red-400 border border-red-800'
+              selectedTrace.finalOutcome === 'APPROVED' ? 'bg-black text-white border border-black' :
+              selectedTrace.finalOutcome === 'ESCALATED' ? 'bg-neutral-900 text-white border border-neutral-900' :
+              'bg-black text-white border border-black'
             }`}>
               {selectedTrace.finalOutcome}
             </span>
           </div>
 
-          <div className="hidden md:flex items-center gap-2 text-slate-400 font-mono text-[11px]">
-            <span>RISK: <strong className={selectedTrace.riskScore > 70 ? 'text-red-400' : 'text-slate-200'}>{selectedTrace.riskScore}/100</strong></span>
-            <span className="text-slate-600">·</span>
-            <span>LATENCY: <strong className="text-slate-200">{selectedTrace.totalDurationMs}ms</strong></span>
-            <span className="text-slate-600">·</span>
-            <span>CONFIDENCE: <strong className="text-cyan-400">{(selectedTrace.confidenceScore * 100).toFixed(1)}%</strong></span>
+          <div className="hidden md:flex items-center gap-2 text-black/70 font-mono text-[11px]">
+            <span>RISK: <strong className={selectedTrace.riskScore > 70 ? 'text-black' : 'text-black'}>{selectedTrace.riskScore}/100</strong></span>
+            <span className="text-black/40">·</span>
+            <span>LATENCY: <strong className="text-black">{selectedTrace.totalDurationMs}ms</strong></span>
+            <span className="text-black/40">·</span>
+            <span>CONFIDENCE: <strong className="text-black">{(selectedTrace.confidenceScore * 100).toFixed(1)}%</strong></span>
           </div>
         </div>
       </div>

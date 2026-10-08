@@ -70,14 +70,16 @@ export const CausalGraphViewer: React.FC<CausalGraphViewerProps> = ({
           <div className="flex items-center gap-2">
             <button
               onClick={() => setHighlightCriticalPathOnly(!highlightCriticalPathOnly)}
-              className={`flex items-center gap-1.5 px-2.5 py-1 text-xs rounded transition-colors ${
+              title="Critical Path"
+              aria-label="Critical Path"
+              className={`flex items-center gap-1.5 px-2.5 py-1 rounded transition-colors ${
                 highlightCriticalPathOnly
-                  ? 'bg-amber-500/20 text-amber-300 border border-amber-500/50'
-                  : 'bg-slate-800 text-slate-300 hover:text-white border border-slate-700'
+                  ? 'bg-black text-white border border-black'
+                  : 'bg-white text-black border border-black/15 hover:bg-black hover:text-white'
               }`}
             >
-              <Sparkles className="w-3.5 h-3.5 text-amber-400" />
-              <span>Critical Path</span>
+              <Sparkles className="w-3.5 h-3.5" />
+              <span className="font-mono text-[10px] tracking-[0.18em] uppercase">CP</span>
             </button>
 
             <div className="flex items-center border border-slate-700 rounded bg-slate-800/70">
